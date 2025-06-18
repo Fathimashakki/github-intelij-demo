@@ -1,0 +1,78 @@
+{
+  "CreateEmployeeResponse": {
+    "id": "long",
+    "name": "string",
+    "dateOfBirth": "yyyy-MM-dd",
+    "salary": "number",
+    "address": "string",
+    "role": "string",
+    "joiningDate": "yyyy-MM-dd",
+    "yearlyBonusPercentage": "number",
+    "departmentName": "string",
+    "reportingManagerName": "string"
+  },
+  "UpdateEmployeeResponse": {
+    "$ref": "#/CreateEmployeeResponse"
+  },
+  "EmployeeDto": {
+    "id": "long",
+    "name": "string",
+    "dateOfBirth": "yyyy-MM-dd",
+    "salary": "number",
+    "address": "string",
+    "role": "string",
+    "joiningDate": "yyyy-MM-dd",
+    "yearlyBonusPercentage": "number",
+    "departmentName": "string",
+    "reportingManagerName": "string"
+  },
+  "DepartmentDto": {
+    "id": "long",
+    "name": "string",
+    "creationDate": "yyyy-MM-dd",
+    "headName": "string",
+    "employees": ["EmployeeDto"]
+  },
+  "EmployeeNameIdDto": {
+    "id": "long",
+    "name": "string"
+  },
+  "PaginatedResponse<EmployeeDto>": {
+    "content": ["EmployeeDto"],
+    "pageable": {
+      "pageNumber": "int",
+      "pageSize": "int"
+    },
+    "totalPages": "int",
+    "totalElements": "int"
+  },
+  "PaginatedResponse<EmployeeNameIdDto>": {
+    "content": ["EmployeeNameIdDto"],
+    "pageable": {
+      "pageNumber": "int",
+      "pageSize": "int"
+    },
+    "totalPages": "int",
+    "totalElements": "int"
+  },
+  "PaginatedResponse<DepartmentDto>": {
+    "content": ["DepartmentDto"],
+    "pageable": {
+      "pageNumber": "int",
+      "pageSize": "int"
+    },
+    "totalPages": "int",
+    "totalElements": "int"
+  },
+  "DeleteDepartmentResponse": {
+    "status": "string (e.g., 'success' or 'error')",
+    "message": "string"
+  },
+  "GenericErrorResponse": {
+    "timestamp": "string",
+    "status": "int",
+    "error": "string",
+    "message": "string",
+    "path": "string"
+  }
+}
