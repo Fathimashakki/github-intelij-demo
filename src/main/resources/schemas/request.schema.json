@@ -1,0 +1,89 @@
+{
+  "CreateEmployee": {
+    "method": "POST",
+    "endpoint": "/api/employees",
+    "body": {
+      "name": "string",
+      "dateOfBirth": "yyyy-MM-dd",
+      "salary": "number",
+      "address": "string",
+      "role": "string",
+      "joiningDate": "yyyy-MM-dd",
+      "yearlyBonusPercentage": "number",
+      "departmentName": "string",
+      "reportingManagerName": "string"
+    }
+  },
+  "UpdateEmployee": {
+    "method": "PUT",
+    "endpoint": "/api/employees/{id}",
+    "body": {
+      "name": "string",
+      "dateOfBirth": "yyyy-MM-dd",
+      "salary": "number",
+      "address": "string",
+      "role": "string",
+      "joiningDate": "yyyy-MM-dd",
+      "yearlyBonusPercentage": "number",
+      "departmentName": "string",
+      "reportingManagerName": "string"
+    }
+  },
+  "UpdateEmployeeDepartment": {
+    "method": "PUT",
+    "endpoint": "/api/employees/{id}/department",
+    "body": {
+      "departmentName": "string"
+    }
+  },
+  "CreateDepartment": {
+    "method": "POST",
+    "endpoint": "/api/departments",
+    "body": {
+      "name": "string",
+      "creationDate": "yyyy-MM-dd",
+      "headName": "string"
+    }
+  },
+  "UpdateDepartment": {
+    "method": "PUT",
+    "endpoint": "/api/departments/{id}",
+    "body": {
+      "name": "string",
+      "creationDate": "yyyy-MM-dd",
+      "headName": "string"
+    }
+  },
+  "DeleteDepartment": {
+    "method": "DELETE",
+    "endpoint": "/api/departments/{id}"
+  },
+  "FetchAllEmployees": {
+    "method": "GET",
+    "endpoint": "/api/employees",
+    "queryParams": {
+      "page": "number (optional, default 0)",
+      "name": "string (optional, filters by employee name)",
+      "lookup": "true (optional, returns only employee id and name if true)"
+    }
+  },
+  "FetchAllDepartments": {
+    "method": "GET",
+    "endpoint": "/api/departments",
+    "queryParams": {
+      "page": "number (optional, default 0)",
+      "expand": "employee (optional, returns employee list if expand=employee)"
+    }
+  },
+  "GetEmployeeById": {
+    "method": "GET",
+    "endpoint": "/api/employees/{id}"
+  },
+  "GetDepartmentById": {
+    "method": "GET",
+    "endpoint": "/api/departments/{id}",
+    "queryParams": {
+      "expand": "employee (optional, returns employee list if expand=employee)"
+    }
+  }
+}
