@@ -14,34 +14,33 @@ public class DepartmentController {
 
     private final DepartmentService departmentService;
 
-    // ✅ Add new department
     @PostMapping
     public ResponseEntity<DepartmentDto> createDepartment(@RequestBody DepartmentDto dto) {
         return ResponseEntity.ok(departmentService.createDepartment(dto));
     }
 
-    // ✅ Update existing department
+
     @PutMapping("/{id}")
     public ResponseEntity<DepartmentDto> updateDepartment(@PathVariable Long id,
                                                           @RequestBody DepartmentDto dto) {
         return ResponseEntity.ok(departmentService.updateDepartment(id, dto));
     }
 
-    // ✅ Delete department
+  
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteDepartment(@PathVariable Long id) {
         departmentService.deleteDepartment(id);
         return ResponseEntity.ok("Department deleted successfully.");
     }
 
-    // ✅ Get department by ID (with optional expand=employee)
+  
     @GetMapping("/{id}")
     public ResponseEntity<DepartmentDto> getDepartmentById(@PathVariable Long id,
                                                            @RequestParam(defaultValue = "false") boolean expand) {
         return ResponseEntity.ok(departmentService.getDepartmentById(id, expand));
     }
 
-    // ✅ Get all departments (with pagination and optional expand)
+ 
     @GetMapping
     public ResponseEntity<Page<DepartmentDto>> getAllDepartments(
             @RequestParam(defaultValue = "0") int page,
